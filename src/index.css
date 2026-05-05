@@ -1,0 +1,51 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+}
+
+@layer base {
+  body {
+    @apply font-sans bg-[#0f172a] text-[#f8fafc];
+  }
+}
+
+@layer components {
+  .glass {
+    @apply backdrop-blur-xl transition-all duration-500 border;
+  }
+  
+  .glass-dark {
+    @apply bg-slate-800/70 border-white/10 shadow-2xl;
+  }
+
+  .glass-light {
+    @apply bg-white/80 border-slate-200 shadow-md shadow-slate-200/50;
+  }
+  
+  .gauge-bar {
+    @apply h-2 rounded-full relative overflow-hidden transition-colors duration-500;
+  }
+  
+  .gauge-bar-dark {
+    @apply bg-slate-700/50;
+  }
+
+  .gauge-bar-light {
+    @apply bg-slate-200;
+  }
+  
+  .gauge-fill {
+    @apply absolute h-full rounded-full transition-all duration-500 ease-out;
+  }
+  
+  .alert-pulse {
+    animation: alert-pulse 2s infinite;
+  }
+}
+
+@keyframes alert-pulse {
+  0% { opacity: 1; }
+  50% { opacity: 0.5; }
+  100% { opacity: 1; }
+}
