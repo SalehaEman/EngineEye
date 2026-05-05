@@ -9,8 +9,8 @@ export default defineConfig(({ mode }) => {
   return {
     plugins: [react(), tailwindcss()],
 
-    // ⭐ IMPORTANT FIX FOR GITHUB PAGES (WHITE SCREEN FIX)
-    base: '/EngineEye/',
+    // ⭐ FINAL FIX (MOST IMPORTANT)
+    base: './',
 
     define: {
       'process.env.GEMINI_API_KEY': JSON.stringify(env.GEMINI_API_KEY),
@@ -20,10 +20,6 @@ export default defineConfig(({ mode }) => {
       alias: {
         '@': path.resolve(__dirname, '.'),
       },
-    },
-
-    server: {
-      hmr: process.env.DISABLE_HMR !== 'true',
     },
   };
 });
